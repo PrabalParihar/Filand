@@ -195,6 +195,7 @@ contract Loan {
     );
   }
 
+
   function lendToken(uint256 _amount) public {
     require(IERC20(tokenAddress).transferFrom(
       msg.sender, address(this), _amount),
@@ -338,20 +339,7 @@ contract Loan {
     }
     return overdue;
   }
-
-  function getUserAllLends()
-    public
-    view
-    returns (LendRequest[] memory)
-  {
-    LendRequest[] memory requests = new LendRequest[](userLendsCount[msg.sender]);
-    for(uint256 i = 0; i < userLendsCount[msg.sender]; i++) {
-      requests[i] = lends[msg.sender][i];
-    }
-    return requests;
-  }
-
-  function getUserNotRetrieveLend()
+function getUserNotRetrieveLend()
     public
     view
     returns (LendRequest[] memory)
@@ -365,4 +353,18 @@ contract Loan {
     }
     return notRetrieved;
   }
+
+  function getUserAllLends()
+    public
+    view
+    returns (LendRequest[] memory)
+  {
+    LendRequest[] memory requests = new LendRequest[](userLendsCount[msg.sender]);
+    for(uint256 i = 0; i < userLendsCount[msg.sender]; i++) {
+      requests[i] = lends[msg.sender][i];
+    }
+    return requests;
+  }
+
+  
 }
