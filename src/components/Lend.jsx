@@ -258,7 +258,7 @@ export default function Lend() {
           setIsProceeding(true);
           setIsEnoughFund(true);
           const res = await contract
-            .lendEther({
+            .lendFIL({
               value: ethers.utils.parseUnits(lendInputRef.current.value, 18),
             })
             .catch((err) => setIsProceeding(false));

@@ -15,7 +15,7 @@ function App() {
     <div className="App min-h-screen text-white">
       {isSupportMetaMask ? (
         networkId != undefined ? (
-          networkId == 3141 ? (
+          networkId == 314159 ? (
             <div>
               <div>
                 <Navbar />
@@ -30,7 +30,7 @@ function App() {
           ) : (
             <div className="translate-y-1/2">
               <div className="text-center flex items-center justify-center shadow-xl w-[90%] md:max-w-[450px] h-[200px] bg-[#0090ff] mx-auto rounded-xl p-4">
-                Sorry, our contract only run on Filecoin — Hyperspace testnet, you have to
+                Sorry, our contract only run on Filecoin - Calibration testnet, you have to
                 switch your network to continue...
               </div>
             </div>

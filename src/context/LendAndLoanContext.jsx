@@ -72,7 +72,11 @@ export const LendAndLoanProvider = ({ children }) => {
       const contract = getLoanContract(provider.getSigner());
       if (account) {
         const loans = await contract.getUserOngoingLoans();
-        return loans;
+        if (loans.length === 0) {
+          return [];
+        } else {
+          return loans;
+        }
       }
     }
   };
